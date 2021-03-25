@@ -1,17 +1,26 @@
 {
-  "name": "admin",
+  "name": "@coreui/coreui-free-react-admin-template",
   "version": "3.2.0",
-  "description": "Thế giới di động Admin page",
+  "description": "CoreUI React Open Source Bootstrap 4 Admin Template",
   "author": {
-    "name": "Dang Lai",
-    "github": "https://github.com/danglaiacc/doancoso"
+    "name": "CoreUI",
+    "url": "https://coreui.io",
+    "github": "https://github.com/coreui",
+    "twitter": "https://twitter.com/core_ui"
   },
+  "contributors": [
+    {
+      "name": "CoreUI Team",
+      "url": "https://github.com/orgs/coreui/people"
+    }
+  ],
   "homepage": ".",
-  "copyright": "Copyright 2021 by Dang Quoc lai", 
+  "copyright": "Copyright 2017-2020 creativeLabs Łukasz Holeczek",
+  "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/danglaiacc/doancoso"
+    "url": "git@github.com:coreui/coreui-free-react-admin-template.git"
   },
   "dependencies": {
     "@coreui/chartjs": "^2.0.0",
