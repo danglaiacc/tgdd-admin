@@ -142,7 +142,7 @@ class NavbarColors extends React.Component {
                             <NavLink className="dropdown-user-link">
                               <div className="user-nav d-sm-flex d-none">
                                 <span className="user-name text-bold-600">
-                                  John Doe
+                                  Dang Lai
                                 </span>
                                 <span className="user-status">Available</span>
                               </div>
