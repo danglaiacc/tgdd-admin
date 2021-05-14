@@ -33,7 +33,7 @@ const navigationConfig = [
   },
   {
     id: "phone",
-    title: "Điện thoại",
+    title: "Phone",
     type: "item",
     icon: <Icon.Smartphone size={20} />,
     permissions: ["admin", "editor"],
@@ -50,7 +50,7 @@ const navigationConfig = [
 
   {
     id: "watch",
-    title: "Đồng hồ",
+    title: "Watch",
     type: "item",
     icon: <Icon.Watch size={20} />,
     permissions: ["admin", "editor"],
@@ -58,17 +58,17 @@ const navigationConfig = [
   },
   {
     type: "groupHeader",
-    groupTitle: "Phụ kiện",
+    groupTitle: "Accessories",
   },
   {
     id: "accessories-phone",
-    title: "Phụ kiện di động",
+    title: "Mobile Accessories",
     type: "collapse",
     icon: <Icon.ShoppingCart size={20} />,
     children: [
       {
         id: "shop",
-        title: "Pin, sạc dự phòng",
+        title: "Backup Charger",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -76,7 +76,7 @@ const navigationConfig = [
       },
       {
         id: "detail",
-        title: "Miếng dán màn hình",
+        title: "Screen Brackets",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -84,7 +84,7 @@ const navigationConfig = [
       },
       {
         id: "wishList",
-        title: "Ốp lưng điện thoại",
+        title: "Phone Case",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -92,7 +92,7 @@ const navigationConfig = [
       },
       {
         id: "checkout",
-        title: "Túi chống sốc",
+        title: "Shockproof Bag",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -102,13 +102,13 @@ const navigationConfig = [
   },
   {
     id: "accessories-laptop",
-    title: "Phụ kiện Laptop",
+    title: "Laptop Accessories",
     type: "collapse",
     icon: <Icon.ShoppingCart size={20} />,
     children: [
       {
         id: "shop",
-        title: "Chuột máy tính",
+        title: "Computer Mouse",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -116,7 +116,7 @@ const navigationConfig = [
       },
       {
         id: "detail",
-        title: "Balo chống sốc",
+        title: "Shockproof Backpack",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -124,7 +124,7 @@ const navigationConfig = [
       },
       {
         id: "wishList",
-        title: "Miếng lót bàn phím",
+        title: "Keyboard Pad",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
@@ -132,14 +132,14 @@ const navigationConfig = [
       },
       {
         id: "checkout",
-        title: "Phần mềm",
+        title: "Software",
         type: "item",
         icon: <Icon.Circle size={12} />,
         permissions: ["admin", "editor"],
         navLink: "/ecommerce/checkout",
       },
     ],
-  }, 
+  },
   {
     type: "groupHeader",
     groupTitle: "APPS",

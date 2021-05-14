@@ -24,7 +24,8 @@ const formSchema = Yup.object().shape({
   id: Yup.number().min(6, ">5 ký tự").required("Required"),
   url: Yup.string().required("Required"),
   text: Yup.string().required("Required"),
-  img: Yup.string().required("Required"),
+  img_small: Yup.string().required("Required"),
+  img_large: Yup.string().required("Required"),
   price: Yup.string().required("Required"),
   article: Yup.string().required("Required"),
   screen: Yup.string().required("Required"),
@@ -41,6 +42,27 @@ const formSchema = Yup.object().shape({
 
 export default function PhoneAdd() {
   const [showManuAdd, setShowManuAdd] = useState("close");
+  const [imgSlider, setImgSlider] = useState([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
+  
+  const changeImgSlider = (evt) => {
+    const { name, value } = evt.target;
+    var arrTemp = [...imgSlider];
+    arrTemp[[name]] = value;
+    setImgSlider(arrTemp);
+  };
   const colorOptions = [
     { value: "red", label: "Màu đỏ" },
     { value: "blue", label: "Màu xanh" },
@@ -107,6 +129,25 @@ export default function PhoneAdd() {
                         </Col>
                       </FormGroup>
                     </Col>
+
+                    <Col md="4">
+                      <FormGroup row>
+                        <Col md="6 text-right">
+                          <span>URL</span>
+                        </Col>
+                        <Col md="6">
+                          <Field
+                            type="number"
+                            name="url"
+                            id="url"
+                            placeholder="01234567"
+                            className={`form-control ${
+                              errors.url && touched.url && "is-invalid"
+                            }`}
+                          />
+                        </Col>
+                      </FormGroup>
+                    </Col>
                     <Col md="5">
                       <FormGroup row>
                         <Col md="3" className="text-right">
@@ -129,7 +170,7 @@ export default function PhoneAdd() {
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="6" sm="12">
+                    <Col md="6" sm="12" className="pl-0">
                       <Col md="12">
                         <FormGroup className="form-label-group">
                           <Field
@@ -150,13 +191,32 @@ export default function PhoneAdd() {
                           <Field
                             type="text"
                             placeholder="Hình minh họa"
-                            name="img"
-                            id="img"
+                            name="img_small"
+                            id="img_small"
                             className={`form-control ${
-                              errors.img && touched.img && "is-invalid"
+                              errors.img_small &&
+                              touched.img_small &&
+                              "is-invalid"
                             }`}
                           />
                           <Label for="required">Hình minh họa</Label>
+                        </FormGroup>
+                      </Col>
+
+                      <Col md="12">
+                        <FormGroup className="form-label-group">
+                          <Field
+                            type="text"
+                            placeholder="Hình minh họa demo"
+                            name="img_large"
+                            id="img_large"
+                            className={`form-control ${
+                              errors.img_large &&
+                              touched.img_large &&
+                              "is-invalid"
+                            }`}
+                          />
+                          <Label for="required">Hình minh họa demo</Label>
                         </FormGroup>
                       </Col>
 
@@ -189,43 +249,9 @@ export default function PhoneAdd() {
                           <Label for="required">Màn hình</Label>
                         </FormGroup>
                       </Col>
-
-                      <Col md="6" sm="12" className="d-inline-block">
-                        <FormGroup className="form-label-group">
-                          <Field
-                            type="text"
-                            placeholder="Camera trước"
-                            name="camera_truoc"
-                            id="camera_truoc"
-                            className={`form-control ${
-                              errors.camera_truoc &&
-                              touched.camera_truoc &&
-                              "is-invalid"
-                            }`}
-                          />
-                          <Label for="required">Camera trước</Label>
-                        </FormGroup>
-                      </Col>
-
-                      <Col md="6" sm="12" className="d-inline-block">
-                        <FormGroup className="form-label-group">
-                          <Field
-                            type="text"
-                            placeholder="Camera sau"
-                            name="camera_sau"
-                            id="camera_sau"
-                            className={`form-control ${
-                              errors.camera_sau &&
-                              touched.camera_sau &&
-                              "is-invalid"
-                            }`}
-                          />
-                          <Label for="required">Camera sau</Label>
-                        </FormGroup>
-                      </Col>
                     </Col>
 
-                    <Col md="6" sm="12">
+                    <Col md="6" sm="12" className="px-0">
                       <Col md="6" sm="12" className="d-inline-block">
                         <FormGroup className="form-label-group">
                           <Field
@@ -320,12 +346,16 @@ export default function PhoneAdd() {
                         <FormGroup className="form-label-group">
                           <Field
                             type="text"
-                            name="mangdd"
-                            id="mangdd"
-                            className="form-control"
-                            placeholder="Mạng di động"
+                            placeholder="Camera trước"
+                            name="camera_truoc"
+                            id="camera_truoc"
+                            className={`form-control ${
+                              errors.camera_truoc &&
+                              touched.camera_truoc &&
+                              "is-invalid"
+                            }`}
                           />
-                          <Label for="required">Mạng di động</Label>
+                          <Label for="required">Camera trước</Label>
                         </FormGroup>
                       </Col>
 
@@ -333,34 +363,51 @@ export default function PhoneAdd() {
                         <FormGroup className="form-label-group">
                           <Field
                             type="text"
-                            name="sim"
-                            className="form-control"
-                            id="sim"
-                            placeholder="Sim"
+                            placeholder="Camera sau"
+                            name="camera_sau"
+                            id="camera_sau"
+                            className={`form-control ${
+                              errors.camera_sau &&
+                              touched.camera_sau &&
+                              "is-invalid"
+                            }`}
                           />
-                          <Label for="required">Sim</Label>
+                          <Label for="required">Camera sau</Label>
                         </FormGroup>
                       </Col>
                     </Col>
                   </Row>
                   <Row>
                     <Col sm="12">
-                      <Col>
+                      <FormGroup className="form-label-group">
+                        <Input
+                          type="textarea"
+                          placeholder="Mô tả"
+                          name="article"
+                          id="article"
+                          rows="15"
+                          className={`form-control ${
+                            errors.article && touched.article && "is-invalid"
+                          }`}
+                        />
+                        <Label for="required">Mô tả</Label>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    {imgSlider.map((val, index) => (
+                      <Col md="6" sm="12" key={index}>
                         <FormGroup className="form-label-group">
                           <Input
-                            type="textarea"
-                            placeholder="Mô tả"
-                            name="article"
-                            id="article"
-                            rows="15"
-                            className={`form-control ${
-                              errors.article && touched.article && "is-invalid"
-                            }`}
+                            type="text"
+                            name={index + ""}
+                            value={imgSlider[index]}
+                            onChange={changeImgSlider}
+                            placeholder="Hình cho slider "
                           />
-                          <Label for="required">Mô tả</Label>
                         </FormGroup>
                       </Col>
-                    </Col>
+                    ))}
                   </Row>
 
                   <Button.Ripple color="primary" type="submit">

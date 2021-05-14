@@ -59,7 +59,7 @@ export default function PhoneAddColor() {
   const handleSubmit = () => {
     console.log(colorSlider);
   };
-
+ 
   return (
     <Card>
       <CardHeader>
@@ -136,139 +136,21 @@ export default function PhoneAddColor() {
               </Row>
 
               <Row>
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="11"
-                      value={colorSlider[11]}
-                      onChange={changeColorSlider}
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor2"
-                      id="txtColor2"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor3"
-                      id="txtColor3"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor4"
-                      id="txtColor4"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor5"
-                      id="txtColor5"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor6"
-                      id="txtColor6"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor7"
-                      id="txtColor7"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor8"
-                      id="txtColor8"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor9"
-                      id="txtColor9"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor10"
-                      id="txtColor10"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor11"
-                      id="txtColor11"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
-                <Col md="6" sm="12">
-                  <FormGroup className="form-label-group">
-                    <Input
-                      type="text"
-                      name="txtColor12"
-                      id="txtColor12"
-                      placeholder="Hình cho slider"
-                    />
-                  </FormGroup>
-                </Col>
-
+                {colorSlider.map((val, index) => (
+                  <Col md="6" sm="12" key={index}>
+                    <FormGroup className="form-label-group">
+                      <Input
+                        type="text"
+                        name={index + ""}
+                        value={colorSlider[index]}
+                        onChange={changeColorSlider}
+                        placeholder="Hình cho slider "
+                      />
+                    </FormGroup>
+                  </Col>
+                ))}
+              </Row>
+              <Row>
                 <Col sm="12">
                   <FormGroup className="form-label-group">
                     <Button.Ripple
