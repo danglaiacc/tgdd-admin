@@ -1,18 +1,24 @@
 import React, { Suspense, lazy } from "react"
 import ReactDOM from "react-dom"
-import { Provider } from "react-redux"
 import { Auth0Provider } from "./authServices/auth0/auth0Service"
 import config from "./authServices/auth0/auth0Config.json"
 import { IntlProviderWrapper } from "./utility/context/Internationalization"
 import { Layout } from "./utility/context/Layout"
 import * as serviceWorker from "./serviceWorker"
-import { store } from "./redux/storeConfig/store"
 import Spinner from "./components/@vuexy/spinner/Fallback-spinner"
 
 import "./index.scss"
 import "./@fake-db"
 
+import { Provider } from "react-redux"
+import {configureStore} from '@reduxjs/toolkit'
+import rootReducer from './features';
+// import { store } from "./redux/storeConfig/store"
+
 const LazyApp = lazy(() => import("./App"))
+
+
+const store = configureStore({ reducer: rootReducer });
 
 // configureDatabase()
 

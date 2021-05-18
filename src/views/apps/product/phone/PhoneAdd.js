@@ -112,6 +112,10 @@ export default function PhoneAdd() {
       [name]:value
     })
   }
+  const getVersionByModal = (params) => {
+    
+  }
+  
 
   const handleChangeVersion = (evt) => {
     setPhoneDetail({

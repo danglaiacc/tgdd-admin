@@ -211,7 +211,8 @@ const RouteConfig = ({ component: Component, fullLayout, ...rest }) => (
 )
 const mapStateToProps = state => {
   return {
-    user: state.auth.login.userRole
+    // user: state.auth.login.userRole //changeRedux
+    user: "admin"
   }
 }
 
