@@ -10,15 +10,10 @@ import Spinner from "./components/@vuexy/spinner/Fallback-spinner"
 import "./index.scss"
 import "./@fake-db"
 
-import { Provider } from "react-redux"
-import {configureStore} from '@reduxjs/toolkit'
-import rootReducer from './features';
-// import { store } from "./redux/storeConfig/store"
+import { Provider } from "react-redux" 
+import { store } from "./redux/storeConfig/store"
 
 const LazyApp = lazy(() => import("./App"))
-
-
-const store = configureStore({ reducer: rootReducer });
 
 // configureDatabase()
 
