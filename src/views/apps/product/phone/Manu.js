@@ -11,7 +11,7 @@ export default function Manu({setShowManuAdd}) {
     { manuId: "realme", manuImg: "Realme42-b_37.png" },
     { manuId: "vsmart", manuImg: "Vsmart42-b_40.png" },
     { manuId: "nokia", manuImg: "Nokia42-b_21.jpg" },
-  ]; 
+  ];
   const [manu, setManu] = useState(null); 
 
   return (
